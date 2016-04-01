@@ -1,4 +1,5 @@
 'use strict';
+// le moo
 var express = require('express'),
     morgan = require('morgan'),
     config = require('../config'),
@@ -7,16 +8,11 @@ var express = require('express'),
     methodOverride = require('method-override');
 
 var App = function() {
-    this._expressApp = express();
+    this.app = express();
     this._init();
 };
 
 App.prototype = {
-    start: function() {
-        this._expressApp.listen(config.port, function() {
-            console.log('Listening on ' + config.port);
-        })
-    },
     _init: function() {
         this._setupPublicFolder();
         this._setupLogging();
@@ -24,10 +20,10 @@ App.prototype = {
         this._simulateDeleteAndPut();
     },
     _simulateDeleteAndPut: function() {
-        this._expressApp.use(methodOverride());
+        this.app.use(methodOverride());
     },
     _setupBodyParsing: function() {
-        var e = this._expressApp;
+        var e = this.app;
         this._getParsers().forEach(function(usable) {
             e.use(usable);
         });
@@ -44,11 +40,11 @@ App.prototype = {
         ];
     },
     _setupPublicFolder: function() {
-        this._expressApp.use(express.static(path.join(__dirname, '..', 'public')));
+        this.app.use(express.static(path.join(__dirname, '..', 'public')));
     },
     _setupLogging: function() {
-        this._expressApp.use(morgan('dev'));
+        this.app.use(morgan('dev'));
     }
 };
 
-module.exports = new App();
+module.exports = new App().app; 

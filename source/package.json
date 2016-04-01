@@ -2,7 +2,7 @@
   "name": "expresslender",
   "version": "1.0.0",
   "description": "Express Lending Library App",
-  "main": "src/server/server.js",
+  "main": "server.js",
   "directories": {
     "test": "test"
   },
