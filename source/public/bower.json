@@ -1,0 +1,24 @@
+{
+  "name": "ExpressLender",
+  "homepage": "https://github.com/fluffynuts/ExpressLender",
+  "authors": [
+    "Davyd McColl <davyd.mccoll@chillisoft.co.za>"
+  ],
+  "description": "moo",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.7",
+    "angular-route": "^1.5.3",
+    "requirejs": "^2.2.0"
+  }
+}

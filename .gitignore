@@ -35,3 +35,6 @@ node_modules
 # vim files
 *.swp
 *.swo
+
+# bower, eh
+bower_components
