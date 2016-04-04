@@ -1,9 +1,6 @@
 define([
+    'angularApp',
     'routes'
-], function() {
-    return {
-        init: function() {
-            console.log('init, eh!');
-        }
-    };
+], function(angularApp) {
+    angular.bootstrap(document, ['angularApp']);
 });
