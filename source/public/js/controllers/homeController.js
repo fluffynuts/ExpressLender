@@ -3,8 +3,8 @@ define([
 ], function(app) {
     app.controller('HomeController', [
         '$scope',
-        function(scope) {
-            console.log('loading home controller');
+    function(scope) {
+        scope.message = "Welcome to Express Lender";
     }]);
 });
 
